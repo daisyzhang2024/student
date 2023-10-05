@@ -3,13 +3,18 @@ layout: default
 title: Student Blog
 ---
 
+<table>
+    <tr>
+        <td><img src="{{site.baseurl}}/images/daisy.png" height="60" title="Frontend" alt=""></td>
+        <td><a href="{{site.baseurl}}/home/course">Course</a></td>
+        <td><a href="{{site.baseurl}}/home/table">Table</a></td>
+        <td><a href="{{site.baseurl}}/home/resume">Resume</a></td>
+        <td><a href="{{site.baseurl}}/home/about">About</a></td>
+    </tr>
+</table>
 
-## Build you Home Page here 
-This is about your journey. Start now!!!
+## Daisy's Homepage 
+Welcome to my homepage!!
 
-## Overview of Hacks, Study and Tangibles
-Blogging in GitHub pages is a way to learn and code at the same time. 
-
-- Plans, Lists, [Scrum Boards](https://clickup.com/blog/scrum-board/) help you to track key events, show progress and record time.  Effort is a big part of your class grade.  Show plans and time spent!
-- [Hacks(Todo)](https://levelup.gitconnected.com/six-ultimate-daily-hacks-for-every-programmer-60f5f10feae) enable you to stay in focus with key requirements of the class.  Each Hack will produce Tangibles.
-- Tangibles or [Tangible Artifacts](https://en.wikipedia.org/wiki/Artifact_(software_development)) are things you accumulate as a learner and coder. 
+## Overview of Course, Table, Resume, and About
+A little bit about me, including my courses, a table of the things I have done, and about me (personally).
