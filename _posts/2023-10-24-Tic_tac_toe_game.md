@@ -26,6 +26,8 @@ const infoDisplay = document.querySelector('#info')
 const startCells = [
     "", "", "", "", "", "", "", "", ""
     ]
+let go = "circle"
+infoDisplay.textContent = "Circle goes first"
 
 function createBoard(){
     startCells.forEach((_cell, index) => {
@@ -42,8 +44,11 @@ createBoard()
 function addGo(e) { //add circle or cross if nothing is there yet
     console.log(e.target) //returns id of square each time you click it
     const goDisplay = document.createElement('div')
-    goDisplay.classList.add('circle') //add class of circle every time we click, append to whatever we click on
+    goDisplay.classList.add(go) //add class of circle every time we click, append to whatever we click on
     e.target.append(goDisplay) //append element that we just created
+    go = go === "circle" ? "cross" : "circle" //if this is true, return cross, otherwise return circle
+    infoDisplay.textContent = "it is now " + go + "'s go." //will read, it is cross's go if it was circle's go before
+    e.target.removeEventListener("click", addGo)
 }
 </script>
 
@@ -84,5 +89,32 @@ body {
     border-radius: 50%;
     border: 15px solid blue;
     box-sizing: border-box;
+}
+
+.cross {
+    height: 90px;
+    width: 90px;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.cross:before, .cross:after {
+    content: "";
+    position: absolute;
+    background-color: red;
+}
+
+.cross:before {
+    left: 50%;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+}
+
+.cross:after {
+    top: 50%;
+    height: 30%;
+    margin-top: -15%;
+    width: 100%;
 }
 </style>
