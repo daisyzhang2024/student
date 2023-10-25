@@ -40,7 +40,7 @@ courses: { compsci: {week: 7} }
         player = button.textContent;
         computerTurn();
         //set text with choices
-        playerText.textContent = `Player: ${player}`;
+        playerText.textContent = `Player: ${player}`; //template literal, placeholder of player
         computerText.textContent = `Computer: ${computer}`;
         resultText.textContent = checkWinner();
     }));
@@ -92,5 +92,8 @@ courses: { compsci: {week: 7} }
     }
     #computerText {
         color: red;
+    }
+    #resultText {
+        color: hotpink;
     }
 </style>
