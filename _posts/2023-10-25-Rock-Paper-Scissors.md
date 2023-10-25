@@ -27,7 +27,7 @@ courses: { compsci: {week: 7} }
 </html>
 
 <script>
-    const playerText = document.querySelector("#playerText"); 
+    const playerText = document.querySelector("#playerText"); //querySelector method to select HTML element, finding any elements with id playerText
     const computerText = document.querySelector("#computerText");
     const resultText = document.querySelector("#resultText"); //resultText ID
     const choiceBtns = document.querySelectorAll(".choiceBtn"); //selecting choice button class
