@@ -49,6 +49,44 @@ function addGo(e) { //add circle or cross if nothing is there yet
     go = go === "circle" ? "cross" : "circle" //if this is true, return cross, otherwise return circle
     infoDisplay.textContent = "it is now " + go + "'s go." //will read, it is cross's go if it was circle's go before
     e.target.removeEventListener("click", addGo)
+    checkScore()
+}
+
+function checkScore() {
+    const allSquares = document.querySelectorAll(".square")
+    const winningCombos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], //horizontal combos
+        [0, 3, 6], [1, 4, 7], [2, 5, 8] //vertical combos
+        [0, 4, 8], [2, 4, 6]
+    ]
+
+    console.log(allSquares[4])
+
+    winningCombos.forEach(array => {
+        const circleWins = array.every(cell => 
+        allSquares[cell].firstChild?.classList.contains('circle'))
+
+        if (circleWins) {
+            infoDisplay.textContent = "Circle Wins!"
+            allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
+            return
+        }
+
+    })
+
+    winningCombos.forEach(array => {
+        const crossWins = array.every(cell => 
+        allSquares[cell].firstChild?.classList.contains('cross'))
+
+        if (crossWins) {
+            infoDisplay.textContent = "Cross Wins!"
+            allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
+            return
+        }
+
+    })
+
+
 }
 </script>
 
