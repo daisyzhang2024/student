@@ -59,9 +59,6 @@ function checkScore() {
         [0, 3, 6], [1, 4, 7], [2, 5, 8] //vertical combos
         [0, 4, 8], [2, 4, 6]
     ]
-
-    console.log(allSquares[4])
-
     winningCombos.forEach(array => {
         const circleWins = array.every(cell => 
         allSquares[cell].firstChild?.classList.contains('circle'))
@@ -71,13 +68,8 @@ function checkScore() {
             allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
             return
         }
-
-    })
-
-    winningCombos.forEach(array => {
         const crossWins = array.every(cell => 
         allSquares[cell].firstChild?.classList.contains('cross'))
-
         if (crossWins) {
             infoDisplay.textContent = "Cross Wins!"
             allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
@@ -85,9 +77,8 @@ function checkScore() {
         }
 
     })
-
-
 }
+
 </script>
 
 <style>
