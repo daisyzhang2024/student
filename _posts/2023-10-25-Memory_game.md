@@ -5,7 +5,7 @@ layout: post
 title: Memory Game
 description: Simple memory game made from youtube tutorial
 type: hacks
-courses: { compsci: {week: 10} }
+courses: { compsci: {week: 7} }
 ---
 <!DOCTYPE html>
 <html lang="en">
