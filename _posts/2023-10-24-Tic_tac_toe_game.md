@@ -5,7 +5,7 @@ layout: post
 title: Tic-Tac-Toe
 description: Simple Tic-Tac-Toe game made from youtube tutorial
 type: hacks
-courses: { compsci: {week: 7} }
+courses: { compsci: {week: 10} }
 ---
 <!DOCTYPE html>
 <html lang="en">

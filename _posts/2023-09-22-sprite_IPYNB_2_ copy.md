@@ -4,7 +4,7 @@ title: u suck
 description: Creating a simple sprite using Javascript.
 author: Daisy Zhang
 permalink: /basics/js-debug
-courses: {'compsci': {'week': 5}}
+courses: {'compsci': {'week': 8}}
 type: hacks
 comments: True
 ---

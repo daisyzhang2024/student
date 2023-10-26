@@ -5,7 +5,7 @@ layout: post
 title: Platform test
 description: Testing platforms for sprites
 type: hacks
-courses: { compsci: {week: 7} }
+courses: { compsci: {week: 9} }
 ---
 <style>
     #canvas {

@@ -5,7 +5,7 @@ layout: post
 title: Canvas
 description: Game with grid of cells, each being dead or alive and evolving over generations of "people"
 type: hacks
-courses: { compsci: {week: 3} }
+courses: { compsci: {week: 8} }
 ---
 <script>
 function setup() {
