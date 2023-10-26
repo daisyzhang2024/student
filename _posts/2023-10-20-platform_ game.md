@@ -5,7 +5,7 @@ layout: post
 title: Platform game (copied from google)
 description: Testing platforms for sprites
 type: hacks
-courses: { compsci: {week: 7} }
+courses: { compsci: {week: 9} }
 ---
 <html>
 <head>
