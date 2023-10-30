@@ -2,9 +2,9 @@ import Character from './Character.js';
 
 const CoyoteAnimation = {
     // Sprite properties
-    scale: 1,
-    width: 32,
-    height: 48,
+    scale: 0.30,
+    width: 260/8,
+    height: 193/4,
 	scene1: { row: 0, frames: 7 },
 	scene2: { row: 1, frames: 7 }
 }
