@@ -1,7 +1,7 @@
 ---
 layout: base
-title: random quote generator
-description: generates random quotes, want to have this for random problem generator
+title: random problem generator
+description: generates random problems
 type: hacks
 courses: { compsci: {week: 2} }
 ---
@@ -10,13 +10,13 @@ courses: { compsci: {week: 2} }
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Random Quote Generator!</title>
+    <title>Random Problem Generator!</title>
 </head>
 <body>
     <div class="container">
     <div class="quotes">
-    <p id="quote">Hello World!</p> <!-- want to access later so have id-->
-    <h3 id="author">Daisy</h3>
+    <p id="quote">Click button to generate random problems!</p> <!-- want to access later so have id-->
+    <h3 id="author">Problems courtesy of AMC</h3>
     </div>
     </div>
     <div style="text-align: center;">
@@ -63,10 +63,11 @@ body{
 function generate(){
     var quotes = {
         //data structure
-        "- Confucius" : '"It does not matter how slowly you go as long as you do not stop."', //key and value
-        "- Nelson Mandela" : '"It always seems impossible until it\'s done."', //single quotes to include the double quotes
-        "- Thomas A. Edison" : '"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time."',
-        "- St. Jerome" : '"Good, better, best. Never let it rest. \'Til you\'re good is better and your better is best"'
+        "Algebra" : "A car has four regular tires and a spare tire. The car is driven 10000 miles, and the tires are rotated so that  all five tires are used equally. How many miles are driven on each tire?", //key and value
+        "Geometry" : "Find n such that a regular n-gon has an equal number of sides and diagonals.",
+        "Counting" : "How many ways can each face of a cube be colored red or blue?", //single quotes to include the double quotes
+        "Algebra" : "For how many integer values of m do the lines 13x + 11y = 700 and y = mx - 1 intersect in a point with integer coordinates?",
+        "Counting" : "How many of the numbers 1, 2, 3, ..., 2014 are not divisible by 6, 10, or 15?"
     }
     var authors = Object.keys(quotes);
     console.log(authors);
