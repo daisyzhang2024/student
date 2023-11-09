@@ -18,13 +18,11 @@ courses: { compsci: {week: 2} }
         <p>
         <h3 style="text-align: center; font-weight: bold;" >Pass the message</h3>
         <p style="border-bottom: 2px solid lightgray rgba(211, 211, 211, 0.5);"></p>
-        </p>
         <p>
             <label for="message-input">Enter a message</label>
             <br>
             <button style="border-radius: 5px 0 0 5px;"><i class="fa-regular fa-message"></i></button><input id="message-input" type="text">
         </p>
-        <p>
         <button onclick="getMessage()">Submit</button>
         </p>
         <p id="message-output" style="text-align: center; text-transform: uppercase;"></p>
