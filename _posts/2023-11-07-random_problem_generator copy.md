@@ -17,6 +17,11 @@ courses: { compsci: {week: 2} }
     <div class="quotes">
     <p id="quote">Click button to generate random problems!</p> <!-- want to access later so have id-->
     <h3><b id="author">Problems courtesy of AMC</b></h3>
+    <p>
+            <input id="message-input" type="text">
+    </p>
+    <button onclick="getMessage()">Submit</button>
+    <p id="message-output" style="text-align: center;"></p>
     <p id="answer"><em>Answer will appear here</em></p>
     </div>
     </div>
@@ -58,6 +63,10 @@ body{
 #quote{
     font-family: 'PT Serif', serif;
 }
+#answer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem; 
+}
 @media(max-width: 480px){ /*can be seen on cell phone nicely*/
     .quotes p, .quotes h3, .quotes h4{
         font-size: 1rem;
@@ -91,13 +100,32 @@ function generate(){
     //access ids
     document.getElementById("quote").innerHTML = quote;
     document.getElementById("author").innerHTML = author;
+    document.getElementById("message-output").innerHTML = "";
 }
-var daan = "";
 function showme(){
-    const answers = [8000, 5, 10, 2, 1478]
+    const answers = ["8000. Divide the total number of miles by each of the 4 tires being used at a time by 5. (1000*4)/5 = 8000.", 
+    
+    "5. Try the polygons. A pentagon works.", 
+    
+    "10. Casework. 1 (all sides red) + 2 (2 sides blue) + 2 (3 sides blue) and multiply by 2 due to symmetry.", 
+    
+    "2. Sub y = mx - 1 into 13x + 11y = 700 and get 13x + 11(mx-1) = 700 so 13x + 11mx = 711, x = 711/(13+11m) in which the only values that work are m= -9 and m = 79.", 
+    
+    "1478. Use PIE. Divisible by 6, 10, or 15 is floor(2014/6) + floor(2014/10) + floor(2014/15). Then subtract multiples of 6 & 10, 6 & 15, 15 & 10. In each case, a multiple of 30 so floor(2014/30). Add back multiple of all three or floor(2014/30)."]
     console.log("index of answer: "+index);
     daan = answers[index]
     console.log(daan);
     document.getElementById("answer").innerHTML = daan;
+}
+
+/*Passing along user input*/
+const messageInput = document.getElementById("message-input");
+messageInput.addEventListener("keydown", function(event){
+    if(event.key == "Enter")
+        getMessage();
+})
+function getMessage(){
+    document.getElementById("message-output").innerHTML = "Your answer: " + messageInput.value;
+    messageInput.value = "";
 }
 </script>
