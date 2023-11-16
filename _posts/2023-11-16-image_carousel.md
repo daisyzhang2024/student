@@ -15,7 +15,7 @@ courses: { compsci: {week: 2} }
 <body>
     <div class="container">
     <div class="image fade">
-    <img src = "{{site.baseurl}}/images/daisy.png" alt = "flower image" width = "100%">
+    <img src = "{{site.baseurl}}/images/daisy.png" alt = "flower image" width = "50%">
     </div>
     <div class="image fade">
     <img src = "{{site.baseurl}}/images/coyote.png" alt = "flower image" width = "100%">
