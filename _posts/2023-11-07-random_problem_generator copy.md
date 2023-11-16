@@ -25,6 +25,7 @@ courses: { compsci: {week: 2} }
     <h2 id="result">😆</h2>
     <p id="answer"><em>Answer will appear here</em></p>
     <p><em id="count">Count appears here</em></p>
+    <p><em id="correct"></em></p>
     </div>
     </div>
     <div style="text-align: center;">
@@ -81,10 +82,8 @@ body{
 </style>
 
 <script>
-var index = 0;
-function generate(){
-    document.getElementById("result").innerHTML = "";
-    var quotes = {
+// array of questions and answers
+var quotes = {
         //data structure
         "Practice AMC 12 Q7" : "For how many integer values of m do the lines 13x + 11y = 700 and y = mx - 1 intersect in a point with integer coordinates?",
 
@@ -92,18 +91,45 @@ function generate(){
 
         "Practice AMC 12 Q5" : "How many ways can each face of a cube be colored red or blue?", 
 
+        "2023 AMC 12A Q1" : "Cities A and B are 45 miles apart. Alicia lives in A and Beth lives in B. Alicia bikes towards B at 18 miles per hour. Leaving at the same time, Beth bikes toward A at 12 miles per hour. How many miles from City A will they be when they meet?",
+
         "Practice AMC 12 Q10" : "How many of the numbers 1, 2, 3, ..., 2014 are not divisible by 6, 10, or 15?",
 
-        "Practice AMC 12 Q1" : "A car has four regular tires and a spare tire. The car is driven 10000 miles, and the tires are rotated so that  all five tires are used equally. How many miles are driven on each tire?"
+        "Practice AMC 12 Q1" : "A car has four regular tires and a spare tire. The car is driven 10000 miles, and the tires are rotated so that  all five tires are used equally. How many miles are driven on each tire?",
+
+        "2023 AMC 12B Q1" : "Mrs. Jones is pouring orange juice into four identical glasses for her four sons. She fills the first three glasses completely but runs out of juice when the fourth glass is only 1/3 full. What fraction of a glass must Mrs. Jones pour from each of the first three glasses into the fourth glass so that all four glasses will have the same amount of juice?"
         //key and value
         //single quotes to include the double quotes
     }
-    var authors = Object.keys(quotes);
-    console.log(quotes);
-    index = Math.floor(Math.random()*authors.length)
-    console.log("index of key: "+index);
-    var author = authors[index]
+var index = 0;
+var authors = Object.keys(quotes);
+var solutions = {  
+        "2" : "2. Sub y = mx - 1 into 13x + 11y = 700 and get 13x + 11(mx-1) = 700 so 13x + 11mx = 711, x = 711/(13+11m) in which the only values that work are m= -9 and m = 79.", 
+
+        "5" : "5. Try the polygons. A pentagon works.",
+
+        "10" : "10. Casework. 1 (all sides red) + 2 (2 sides blue) + 2 (3 sides blue) and multiply by 2 due to symmetry.",
+
+        "27" : "27. D = r*t. Hence, we have 12x + 18x = 45, so x = 3/2. We need distance from A, so 18*3/2 = 27.",
+        
+        "1478" : "1478. Use PIE. Divisible by 6, 10, or 15 is floor(2014/6) + floor(2014/10) + floor(2014/15). Then subtract multiples of 6 & 10, 6 & 15, 15 & 10. In each case, a multiple of 30 so floor(2014/30). Add back multiple of all three or floor(2014/30).",
+
+        "8000" : "8000. Divide the total number of miles by each of the 4 tires being used at a time by 5. (1000*4)/5 = 8000.",
+        
+        "1/6" : "1/6. The total juice in all of the glasses is 1 + 1 + 1 + 1/3 = 10/3, so each glass is 5/6 of a glass full. This means you must pour out 1/6 of the juice from the three glasses."
+        
+    }
+var simple_answers = Object.keys(solutions); //setting array of keys
+console.log(simple_answers)
+var solution = "";
+
+function generate(){
+    document.getElementById("result").innerHTML = "";
+    index = Math.floor(Math.random()*authors.length) //setting the index when you click the generate button
+    var author = authors[index] //getting the specific author and problem corresponding to random index
     var quote = quotes[author] //using dictionary, referencing key
+    simple_answer = simple_answers[index] //getting key corresponding to index, simple answer
+    solution = solutions[simple_answer] //getting solution (value) from key
     //access ids
     document.getElementById("quote").innerHTML = quote;
     document.getElementById("author").innerHTML = author;
@@ -112,26 +138,6 @@ function generate(){
 var simple_answer = "";
 var count = 0;
 function showme(){
-    var solutions = {  
-        "2" : "2. Sub y = mx - 1 into 13x + 11y = 700 and get 13x + 11(mx-1) = 700 so 13x + 11mx = 711, x = 711/(13+11m) in which the only values that work are m= -9 and m = 79.", 
-
-        "5" : "5. Try the polygons. A pentagon works.",
-
-        "10" : "10. Casework. 1 (all sides red) + 2 (2 sides blue) + 2 (3 sides blue) and multiply by 2 due to symmetry.",
-        
-        "1478" : "1478. Use PIE. Divisible by 6, 10, or 15 is floor(2014/6) + floor(2014/10) + floor(2014/15). Then subtract multiples of 6 & 10, 6 & 15, 15 & 10. In each case, a multiple of 30 so floor(2014/30). Add back multiple of all three or floor(2014/30).",
-
-        "8000" : "8000. Divide the total number of miles by each of the 4 tires being used at a time by 5. (1000*4)/5 = 8000."
-        
-    }
-    console.log("index of answer: "+index);
-    var simple_answers = Object.keys(solutions); //setting array of keys
-    console.log("array of keys: "+simple_answers);
-    simple_answer = simple_answers[index] //getting key corresponding to index, simple answer
-    console.log("simpleanswer1: "+simple_answer);
-    var solution = solutions[simple_answer] //getting solution (value) from key
-    console.log("simple answer: "+simple_answer);
-    console.log("solution: "+solution);
     count += 1;
     document.getElementById("count").innerHTML = "Number of problems done: " + count;
     document.getElementById("answer").innerHTML = solution;
@@ -143,6 +149,7 @@ messageInput.addEventListener("keydown", function(event){
     if(event.key == "Enter")
         getMessage();
 })
+var count2 = 0;
 function getMessage(){
     document.getElementById("message-output").innerHTML = "Your answer: " + messageInput.value;
     console.log("input: "+messageInput.value);
@@ -150,6 +157,8 @@ function getMessage(){
     console.log(messageInput.value==simple_answer);
     if(messageInput.value == simple_answer){
         document.getElementById("result").innerHTML = "Correct!"
+        count2 += 1;
+        document.getElementById("correct").innerHTML = "Number of correct problems: " + count2;
     }
     else{
         document.getElementById("result").innerHTML = "Incorrect :("
