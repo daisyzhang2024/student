@@ -15,26 +15,26 @@ courses: { compsci: {week: 2} }
 <body>
     <div class="container">
     <div class="image fade">
-    <img src = "{{site.baseurl}}/images/daisy.png" alt = "flower image" width = "50%">
+    <img src = "{{site.baseurl}}/images/asianbaby1.jpg" alt = "asian baby image" width = "100%">
     </div>
     <div class="image fade">
-    <img src = "{{site.baseurl}}/images/coyote.png" alt = "flower image" width = "100%">
+    <img src = "{{site.baseurl}}/images/asianbaby2.jpg" alt = "asian baby image" width = "100%">
     </div>
     <div class="image fade">
-    <img src = "{{site.baseurl}}/images/logo.png" alt = "flower image" width = "100%">
+    <img src = "{{site.baseurl}}/images/asianbaby3.jpg" alt = "asian baby image" width = "100%">
     </div>
     <div class="image fade">
-    <img src = "{{site.baseurl}}/images/platform.png" alt = "flower image" width = "100%">
+    <img src = "{{site.baseurl}}/images/asianbaby4.jpg" alt = "asian baby image" width = "100%">
     </div>
     <div class="image fade">
-    <img src = "{{site.baseurl}}/images/fantasy_world.jpeg" alt = "flower image" width = "100%">
+    <img src = "{{site.baseurl}}/images/asianbaby5.jpg" alt = "asian baby image" width = "100%">
     </div>
     <div class="image fade">
-    <img src = "{{site.baseurl}}/images/Screenshot1.png" alt = "flower image" width = "100%">
+    <img src = "{{site.baseurl}}/images/asianbaby6.jpg" alt = "asian baby image" width = "100%">
     </div>
-    <img src = "{{site.baseurl}}/images/Screenshot2.png" alt = "flower image" width = "100%">
+    <img src = "{{site.baseurl}}/images/asianbaby7.jpg" alt = "asian baby image" width = "100%">
     </div>
-    <img src = "{{site.baseurl}}/images/Screenshot3.png" alt = "flower image" width = "100%">
+    <img src = "{{site.baseurl}}/images/asianbaby8.jpg" alt = "asian baby image" width = "100%">
     </div>
     </div>   
 </body>
