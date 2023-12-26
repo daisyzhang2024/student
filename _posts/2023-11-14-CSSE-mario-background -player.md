@@ -10,6 +10,8 @@ images:
     src: /images/mario/hills.png
   mario:
     src: /images/mario_animation.png
+  coyote: 
+    src: /images/coyote.png
 ---
 <!-- Liquid code, run by Jekyll, used to define location of asset(s) -->
 {% assign backgroundFile = site.baseurl | append: page.images.background.src %}
